@@ -23,6 +23,11 @@
       "name": "Autonomous",
       "widgets": [
         {
+          "name": "Move",
+          "type": "checkbox",
+          "prefix": "Auto"
+        },
+        {
           "name": "Coral L1",
           "type": "spinbox",
           "prefix": "Auto"
