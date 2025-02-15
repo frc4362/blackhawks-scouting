@@ -3,4 +3,3 @@ pitcheck
 matchcheck
 pit-scout
 analyst
-2025demo

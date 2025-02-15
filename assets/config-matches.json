@@ -1,5 +1,5 @@
 {
-  "heading": "Crescendo - 2024 - 0.2",
+  "heading": "Reefscape - 2025 - 0.0",
   "logo": "gemslogo.png",
   "pages": [
     {
@@ -23,12 +23,37 @@
       "name": "Autonomous",
       "widgets": [
         {
-          "name": "Speaker Notes",
+          "name": "Move",
+          "type": "checkbox",
+          "prefix": "Auto"
+        },
+        {
+          "name": "Coral L1",
           "type": "spinbox",
           "prefix": "Auto"
         },
         {
-          "name": "Amp Notes",
+          "name": "Coral L2",
+          "type": "spinbox",
+          "prefix": "Auto"
+        },
+        {
+          "name": "Coral L3",
+          "type": "spinbox",
+          "prefix": "Auto"
+        },
+        {
+          "name": "Coral L4",
+          "type": "spinbox",
+          "prefix": "Auto"
+        },
+        {
+          "name": "Algae net",
+          "type": "spinbox",
+          "prefix": "Auto"
+        },
+        {
+          "name": "Algae processor",
           "type": "spinbox",
           "prefix": "Auto"
         }
@@ -38,26 +63,39 @@
       "name": "Teleop",
       "widgets": [
         {
-          "name": "Speaker Notes",
+          "name": "Coral L1",
           "type": "spinbox"
         },
         {
-          "name": "Amp Notes",
+          "name": "Coral L2",
+          "type": "spinbox"
+        },
+        {
+          "name": "Coral L3",
+          "type": "spinbox"
+        },
+        {
+          "name": "Coral L4",
+          "type": "spinbox"
+        },
+        {
+          "name": "Algae net",
+          "type": "spinbox"
+        },
+        {
+          "name": "Algae processor",
           "type": "spinbox"
         },
         {
           "name": "End Location",
           "type": "radio",
           "options": [
-            "Harmonized",
-            "Onstage",
+            "Parked",
+            "Shallow",
+            "Deep",
             "None"
           ],
-          "default": 2
-        },
-        {
-          "name": "Scored in the trap?",
-          "type": "checkbox"
+          "default": 3
         }
       ]
     }
