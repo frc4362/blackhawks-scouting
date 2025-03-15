@@ -3,23 +3,6 @@
   "logo": "gemslogo.png",
   "pages": [
     {
-      "name": "Setup",
-      "widgets": [
-        {
-          "name": "Scouter Name",
-          "type": "radio",
-          "options": [
-            "Carrie",
-            "Sean",
-            "Cooper",
-            "Sam",
-            "Other"
-          ],
-          "default": 4
-        }
-      ]
-    },
-    {
       "name": "Autonomous",
       "widgets": [
         {
@@ -56,6 +39,11 @@
           "name": "Algae processor",
           "type": "spinbox",
           "prefix": "Auto"
+        },
+        {
+          "name": "Algae removed",
+          "type": "spinbox",
+          "prefix": "Auto"
         }
       ]
     },
@@ -84,6 +72,10 @@
         },
         {
           "name": "Algae processor",
+          "type": "spinbox"
+        },
+        {
+          "name": "Algae removed",
           "type": "spinbox"
         },
         {
