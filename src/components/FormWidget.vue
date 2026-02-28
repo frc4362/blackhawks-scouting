@@ -7,6 +7,7 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from "vue";
 import FormGroup from "@/components/FormGroup.vue";
 import { pick } from "lodash";
 import { LabelType, validationFuncs, validationFuncsRange } from "@/common/shared";
@@ -61,8 +62,29 @@ const info = {
   togglegrid:    { class: WidgetToggleGrid,    label: LabelType.PlainText }
 }[props.data.type];
 
+const teamNumbers = $computed(() => {
+  const teamValue = widgets.values.find(w => w.name === "Team")?.value;
+  // This turns "2832, 33, 67" into ["2832", "33", "67"]
+  return teamValue ? String(teamValue).split(',').map(s => s.trim()) : [];
+});
+
+const dynamicName = $computed(() => {
+  let name = props.data.name;
+  if (!name) return "";
+
+  // Check for our placeholders and replace them with the actual team numbers
+  if (name.includes("Bot 1") && teamNumbers[0]) name = name.replace("Bot 1", `${teamNumbers[0]}`);
+  if (name.includes("Bot 2") && teamNumbers[1]) name = name.replace("Bot 2", `${teamNumbers[1]}`);
+  if (name.includes("Bot 3") && teamNumbers[2]) name = name.replace("Bot 3", `${teamNumbers[2]}`);
+
+  return name;
+});
+
 // Props to pass from the widget data to the sub-components
-const mappedProps = pick(props.data, ["name", "align", "row", "col", "rowspan", "colspan", "labelColspan"]);
+const mappedProps = $computed(() => ({
+  ...pick(props.data, ["name", "align", "row", "col", "rowspan", "colspan", "labelColspan"]),
+  name: dynamicName
+}));
 
 // Validates the value of the widget.
 function validate() {

@@ -1,63 +1,21 @@
 {
-  "heading": "Crescendo - 2024 - 0.2",
+  "heading": "Rebuilt 0.0",
   "logo": "gemslogo.png",
   "pages": [
-    {
-      "name": "Setup",
-      "widgets": [
-        {
-          "name": "Scouter Name",
-          "type": "radio",
-          "options": [
-            "Carrie",
-            "Sean",
-            "Cooper",
-            "Sam",
-            "Other"
-          ],
-          "default": 4
-        }
-      ]
-    },
-    {
-      "name": "Autonomous",
-      "widgets": [
-        {
-          "name": "Speaker Notes",
-          "type": "spinbox",
-          "prefix": "Auto"
-        },
-        {
-          "name": "Amp Notes",
-          "type": "spinbox",
-          "prefix": "Auto"
-        }
-      ]
-    },
     {
       "name": "Teleop",
       "widgets": [
         {
-          "name": "Speaker Notes",
+          "name": "Bot 1 Cycles",
           "type": "spinbox"
         },
         {
-          "name": "Amp Notes",
+          "name": "Bot 2 Cycles",
           "type": "spinbox"
         },
         {
-          "name": "End Location",
-          "type": "radio",
-          "options": [
-            "Harmonized",
-            "Onstage",
-            "None"
-          ],
-          "default": 2
-        },
-        {
-          "name": "Scored in the trap?",
-          "type": "checkbox"
+          "name": "Bot 3 Cycles",
+          "type": "spinbox"
         }
       ]
     }
