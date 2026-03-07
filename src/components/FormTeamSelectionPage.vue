@@ -124,8 +124,8 @@ const teamData = $computed(() => {
 
 // Add values to export
 widgets.addWidgetValue("EventKey", $$(eventKey));
-widgets.addWidgetValue("MatchLevel", $$(matchLevel));
 widgets.addWidgetValue("MatchNumber", $$(matchNumber));
+widgets.addWidgetValue("TeamColor", $$(teamColor));
 widgets.addWidgetValue("Team", $$(teamData));
 
 // Updates the loaded status message for a variable.
