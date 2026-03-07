@@ -1,8 +1,7 @@
 {
   "name": "blackhawks-scouting",
-  "homepage": "https://frc4362.github.io/blackhawks-scouting",
-  "version": "4.0.0",
-  "private": false,
+  "version": "2026.0 Prerelease",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,36 +9,35 @@
     "serve": "vite preview",
     "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore --fix src",
     "installModules": "npm install",
-    "generateSchema": "json2ts src/common/config.schema.json src/config.d.ts",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "generateSchema": "json2ts src/common/config.schema.json src/config.d.ts"
   },
   "dependencies": {
     "@types/lodash": "^4.14.202",
-    "@vueuse/core": "^10.7.1",
+    "@vueuse/core": "^10.9.0",
     "ajv": "^8.12.0",
+    "canvas-confetti": "^1.9.3",
     "pinia": "^2.1.7",
     "qrcode.vue": "^3.4.1",
-    "vue": "^3.4.3",
-    "vue-router": "^4.2.5"
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.16.0",
-    "@typescript-eslint/parser": "^6.16.0",
-    "@vitejs/plugin-vue": "^5.0.2",
-    "@vue-macros/reactivity-transform": "^0.4.1",
-    "@vue/eslint-config-typescript": "^12.0.0",
-    "autoprefixer": "^10.4.16",
-    "eslint": "^8.56.0",
-    "eslint-plugin-vue": "^9.19.2",
-    "gh-pages": "^6.1.1",
-    "json-schema-to-typescript": "^13.1.1",
-    "postcss": "^8.4.32",
-    "postcss-preset-env": "^9.3.0",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.10",
+    "@types/canvas-confetti": "^1.9.0",
+    "@typescript-eslint/eslint-plugin": "^8.56.0",
+    "@typescript-eslint/parser": "^8.56.0",
+    "@vitejs/plugin-vue": "^6.0.4",
+    "@vue-macros/reactivity-transform": "^0.4.3",
+    "@vue/eslint-config-typescript": "^14.7.0",
+    "autoprefixer": "^10.4.18",
+    "eslint": "^9.39.2",
+    "eslint-plugin-vue": "^10.8.0",
+    "json-schema-to-typescript": "^15.0.4",
+    "postcss": "^8.4.35",
+    "postcss-preset-env": "^9.5.0",
+    "typescript": "^5.4.2",
+    "vite": "^7.3.1",
     "vite-plugin-live-reload": "^3.0.3",
-    "vite-plugin-pwa": "^0.17.4"
+    "vite-plugin-pwa": "^1.2.0"
   },
   "eslintConfig": {
     "root": true,
