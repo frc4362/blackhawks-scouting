@@ -22,19 +22,17 @@
     <FormGroup :label-type="LabelType.LabelTag" id="match-input" name="Match Number">
       <input id="match-input" type="number" v-model.lazy="matchNumber" :min="1" />
     </FormGroup>
-    <FormGroup :show="isTBA" :label-type="LabelType.LabelTag" id="team-input" name="Team">
-      <span v-if="currentMatch === null">&lt;No Data&gt;</span>
-      <select v-else id="team-input" v-model="selectedTeam">
-        <option v-for="[i, { color, index, number, name }] of teamsList.entries()" :key="i" :value="i">
-          {{ color }} {{ index }}: {{ number }} ({{ name }})
-        </option>
-      </select>
+    <FormGroup :show="!isTBA" :label-type="LabelType.LabelTag" id="team-number-input1" name="Team Number">
+      <input type="number" v-model="teamNumberManual1">
     </FormGroup>
-    <FormGroup :show="!isTBA" :label-type="LabelType.LabelTag" id="team-number-input" name="Team Number">
-      <input type="number" v-model="teamNumberManual">
+    <FormGroup :show="!isTBA" :label-type="LabelType.LabelTag" id="team-number-input2" name="Team Number">
+      <input type="number" v-model="teamNumberManual2">
     </FormGroup>
-    <FormGroup :show="!isTBA" :label-type="LabelType.LabelTag" id="team-color-input" name="Team Color">
-      <select id="team-color-input" v-model="teamColorManual">
+    <FormGroup :show="!isTBA" :label-type="LabelType.LabelTag" id="team-number-input3" name="Team Number">
+      <input type="number" v-model="teamNumberManual3">
+    </FormGroup>
+    <FormGroup :label-type="LabelType.LabelTag" id="team-color-input" name="Team Color">
+      <select id="team-color-input" v-model="teamColor">
         <option value="Red" selected>Red</option>
         <option value="Blue">Blue</option>
       </select>
@@ -71,8 +69,10 @@ const matchLevel = $ref(0);
 const matchNumber = $ref(1);
 const selectedTeam = $ref(0);
 
-const teamNumberManual = $ref(0);
-const teamColorManual = $ref("Red");
+const teamNumberManual1 = $ref(0);
+const teamNumberManual2 = $ref(0);
+const teamNumberManual3 = $ref(0);
+const teamColor = $ref("Red");
 
 let teamsLoadStatus = $ref("");
 let matchesLoadStatus = $ref("");
@@ -105,18 +105,12 @@ const teamsList = $computed(() => {
   const result = new Array<Team>();
   if (currentMatch === null) return result; // Return empty array if current selected match is invalid
 
-  for (const color of ["Red", "Blue"]) {
-    // The list of teams playing on one alliance
-    const teamKeys = get(currentMatch, `alliances.${color.toLowerCase()}.team_keys`) as unknown as string[];
+  // The list of teams playing on one alliance
+  const teamKeys = get(currentMatch, `alliances.${teamColor.toLowerCase()}.team_keys`) as unknown as string[];
 
-    for (const [i, element] of teamKeys.entries()) {
-      // Get info for each team
-      const index = i + 1;
-      const number = parseInt(element.substring(3));
-      const name = getTeamName(number, teams);
-
-      result.push({ color, index, number, name });
-    }
+  for (const element of teamKeys) {
+    const number = parseInt(element.substring(3));
+    result.push(number);
   }
 
   return result;
@@ -124,8 +118,8 @@ const teamsList = $computed(() => {
 
 // The exported team information
 const teamData = $computed(() => {
-  if (isTBA) return teamsList[selectedTeam] ? Object.values(teamsList[selectedTeam]).join() : "";
-  else return `${teamColorManual},0,${teamNumberManual},(no name available)`;
+  if (isTBA) return teamsList.length > 0 ? teamsList.join(",") : "";
+  else return `${teamNumberManual1},${teamNumberManual2},${teamNumberManual3},`;
 });
 
 // Add values to export
