@@ -11,7 +11,6 @@ import vue from "@vitejs/plugin-vue";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/blackhawks-scouting/",
   css: {
     postcss: {
       plugins: [autoprefixer, postcssPresetEnv({ stage: 1 })]

@@ -2,11 +2,17 @@
 
 This document tracks the changes between Black Hawks Scouting versions. Dates are written in the MM/DD/YYYY format.
 
-## 2024.1 (Unreleased)
+## 2024.1 (03/01/2024)
 
 ### Additions
 
 - Added an "exclude headers" option for QR code generation (#8).
+- Added The Purple Standard (TPS) support. [Documentation](tps.md)
+- Added a qualitative scouting configuration.
+
+### Bug Fixes
+
+- Fixed the occasional "... is not a function" error message that would appear when switching between forms.
 
 ## 2024.0 (01/06/2024)
 
@@ -59,3 +65,7 @@ This document tracks the changes between Black Hawks Scouting versions. Dates ar
 ### Bug Fixes
 
 - Fixed a bug where spaces from widget names would not be removed in the exported CSV if `prefix` was set in the configuration.
+
+## Initial Public Release (09/12/2022)
+
+- Initial release.

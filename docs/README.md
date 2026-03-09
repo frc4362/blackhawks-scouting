@@ -1,5 +1,3 @@
-## **The link to the website is [here](https://frc4362.github.io/blackhawks-scouting/)**
-
 # Black Hawks Scouting
 
 ## Overview
