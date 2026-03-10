@@ -1,5 +1,6 @@
 {
   "name": "blackhawks-scouting",
+  "homepage": "https://frc4362.github.io/blackhawks-scouting",
   "version": "2024.2 Prerelease",
   "private": true,
   "type": "module",
@@ -9,7 +10,9 @@
     "serve": "vite preview",
     "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore --fix src",
     "installModules": "npm install",
-    "generateSchema": "json2ts src/common/config.schema.json src/config.d.ts"
+    "generateSchema": "json2ts src/common/config.schema.json src/config.d.ts",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@types/lodash": "^4.14.202",
