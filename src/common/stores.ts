@@ -137,7 +137,7 @@ export const useTBAStore = defineStore("tba", () => {
 
     // Otherwise, fetch the data from the API, passing the API key (must be set in env)
     const fetchData = await fetch(`https://www.thebluealliance.com/api/v3/event/${code}/${name}/simple`, {
-      headers: { "X-TBA-Auth-Key": import.meta.env.VITE_TBA_API_KEY }
+      headers: { "X-TBA-Auth-Key": atob("M3VaM3JCZVNic3piaGp5WEZMUFZUS2N5bHV0Q3lhdGtVS3BmdFJweU5jZFhKSVZldFdLYm9IcEFtTWtOWk45Zg==") }
     });
 
     // Parse the data as a JSON object
