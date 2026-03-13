@@ -18,45 +18,6 @@
           "type": "spinbox"
         }
       ]
-    },
-    {
-      "name": "Climb and Totals",
-      "widgets": [
-        {
-          "name": "Bot 1 Climb",
-          "type": "dropdown",
-          "options": [
-            "No Climb",
-            "Level 1",
-            "Level 2",
-            "Level 3"
-          ]
-        },
-        {
-          "name": "Bot 2 Climb",
-          "type": "dropdown",
-          "options": [
-            "No Climb",
-            "Level 1",
-            "Level 2",
-            "Level 3"
-          ]
-        },
-        {
-          "name": "Bot 3 Climb",
-          "type": "dropdown",
-          "options": [
-            "No Climb",
-            "Level 1",
-            "Level 2",
-            "Level 3"
-          ]
-        },
-        {
-          "name": "Total Fuel",
-          "type": "number"
-        }
-      ]
     }
   ]
 }
